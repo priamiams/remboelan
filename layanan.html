@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Ambulans VIP, Standar & Jenazah | REMBOELAN</title>
+    <meta name="description" content="Daftar layanan lengkap dari REMBOELAN Ambulance. Mulai dari ambulans pasien, ambulans jenazah, evakuasi medis darurat, hingga standby medis untuk event.">
+    <meta name="keywords" content="layanan ambulans, ambulans pasien, ambulans jenazah, ambulans event, evakuasi medis, ambulans vip, peti mati, pemandian jenazah">
+    <meta name="author" content="CV. CAHAYA REMBOELAN INSANI">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Layanan Ambulans VIP, Standar & Jenazah | REMBOELAN">
+    <meta property="og:description" content="Daftar layanan lengkap dari REMBOELAN Ambulance. Mulai dari ambulans pasien, ambulans jenazah, hingga standby medis event.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/img/logo.jpg">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .service-list-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        .service-list-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-list-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-list-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .service-list-card:hover .service-list-img img {
+            transform: scale(1.1);
+        }
+
+        .service-list-content {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-list-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .service-list-desc {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-active bg-white shadow-sm" style="padding: 15px 0;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="assets/img/logo.jpg" alt="REMBOELAN Logo" class="rounded-circle me-2" style="width: 50px; height: 50px; object-fit: cover;">
+                <div class="ms-1 d-flex flex-column justify-content-center">
+                    <span class="fw-bolder fs-4 brand-title">REMBOELAN</span>
+                    <span class="brand-subtitle">EMERGENCY SERVICE</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="tentang.html">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-primary-custom active" href="layanan.html">Layanan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="kontak.html">Kontak</a>
+                    </li>
+                </ul>
+                <a href="https://wa.me/6285141705409" target="_blank" class="btn btn-primary-custom ms-lg-3 mt-3 mt-lg-0">
+                    <i class="bi bi-whatsapp me-2"></i> Hubungi Kami
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1 class="page-title" data-aos="fade-up">Layanan Kami</h1>
+            <nav aria-label="breadcrumb" data-aos="fade-up" data-aos-delay="100">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Layanan</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Services Grid -->
+    <section class="py-5 my-5 bg-light-custom">
+        <div class="container py-4">
+            <div class="section-title" data-aos="fade-up">
+                <span>Solusi Terpadu</span>
+                <h2>Pilihan Layanan REMBOELAN</h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/ambulancepasien.jpg" alt="Ambulance Pasien">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Ambulance Pasien / Medis</h3>
+                            <p class="service-list-desc">Layanan evakuasi medis darurat dan non-darurat untuk antar jemput pasien dari rumah ke rumah sakit atau sebaliknya. Didampingi oleh perawat ahli.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20layanan%20Ambulance%20Pasien" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/jenazahambulanc.jpg" alt="Ambulance Jenazah">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Ambulance Jenazah</h3>
+                            <p class="service-list-desc">Pengantaran jenazah baik dalam kota maupun luar provinsi (seluruh Indonesia). Kami menjamin proses yang aman, lancar, dan menghormati nilai-nilai kedukaan.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20layanan%20Ambulance%20Jenazah" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/ambulanceevent.jpg" alt="Ambulance Event">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Ambulance Event</h3>
+                            <p class="service-list-desc">Medical standby untuk pengamanan acara-acara besar seperti konser musik, kegiatan olahraga, pameran, festival, hingga pertemuan kenegaraan.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20layanan%20Ambulance%20Event" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/ambulance vvip.jpg" alt="Ambulance VVIP">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Ambulance VVIP</h3>
+                            <p class="service-list-desc">Layanan eksklusif menggunakan armada khusus (premium) dengan fasilitas suspensi ekstra nyaman dan kabin kedap suara untuk kenyamanan maksimal.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20layanan%20Ambulance%20VVIP" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/layanankedukaan.jpg" alt="Layanan Kedukaan">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Layanan Kedukaan</h3>
+                            <p class="service-list-desc">Penanganan terpadu yang meliputi memandikan jenazah, pengafanan, hingga tata cara persemayaman dan ibadah kedukaan sesuai dengan kepercayaan.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20Layanan%20Kedukaan" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/tampakdepanmobil.jpg" alt="Cargo Jenazah">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Cargo Jenazah</h3>
+                            <p class="service-list-desc">Layanan pengurusan dan pengiriman jenazah via udara (pesawat) domestik maupun internasional, lengkap dengan pengurusan dokumen (surat karantina, kepolisian).</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20layanan%20Cargo%20Jenazah" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-list-card">
+                        <div class="service-list-img">
+                            <img src="assets/img/petimati.jpg" alt="Peti Mati">
+                        </div>
+                        <div class="service-list-content">
+                            <h3 class="service-list-title">Penyediaan Peti Mati</h3>
+                            <p class="service-list-desc">Menyediakan berbagai macam jenis dan ukuran peti mati berkualitas tinggi (kayu jati, peti ukir, standar, dll) yang disesuaikan dengan kebutuhan dan budjet.</p>
+                            <a href="https://wa.me/6285141705409?text=Halo%20Admin%2C%20saya%20butuh%20Penyediaan%20Peti%20Mati" target="_blank" class="btn btn-outline-custom w-100">Hubungi Kami</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4 col-md-6">
+                    <img src="assets/img/logo.jpg" alt="Logo" class="rounded-circle mb-3" style="width:60px; height:60px;">
+                    <h4 class="text-white fw-bold mb-3">REMBOELAN</h4>
+                    <p class="mb-4">CV. CAHAYA REMBOELAN INSANI adalah penyedia jasa transportasi ambulans profesional yang mengedepankan keamanan, kecepatan, dan kenyamanan.</p>
+                    <div class="social-icons">
+                        <a href="https://wa.me/6285141705409" target="_blank"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.tiktok.com/@remboelan_emergenc" target="_blank"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Quick Menu</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="tentang.html">Tentang Kami</a></li>
+                        <li><a href="layanan.html">Layanan</a></li>
+                        <li><a href="kontak.html">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Daftar Layanan</h5>
+                    <ul class="footer-links">
+                        <li><a href="layanan.html">Ambulance Pasien</a></li>
+                        <li><a href="layanan.html">Ambulance Jenazah</a></li>
+                        <li><a href="layanan.html">Ambulance Event</a></li>
+                        <li><a href="layanan.html">Ambulance VVIP</a></li>
+                        <li><a href="layanan.html">Layanan Kedukaan</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Kontak Kami</h5>
+                    <ul class="footer-links">
+                        <li class="mb-3 d-flex"><i class="bi bi-geo-alt-fill text-primary-custom me-3 fs-5"></i> <span>JABODETABEK (Pusat Operasional)</span></li>
+                        <li class="mb-3 d-flex"><i class="bi bi-telephone-fill text-primary-custom me-3 fs-5"></i> <span>+62 851 4170 5409</span></li>
+                        <li class="mb-3 d-flex"><i class="bi bi-envelope-fill text-primary-custom me-3 fs-5"></i> <span>info@remboelan.com</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0">&copy; 2026 CV. CAHAYA REMBOELAN INSANI. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" id="back-to-top" title="Kembali ke atas">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/6285141705409" target="_blank" class="floating-wa" title="Hubungi Kami via WhatsApp">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
