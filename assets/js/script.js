@@ -70,28 +70,27 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 5. Contact Form to WhatsApp logic
-  const contactForm = document.getElementById("contactForm");
+  // 5. Dynamic WhatsApp Link - update href based on form input (optional enhancement)
   const btnWA = document.getElementById("btnWA");
+  const nField = document.getElementById("nama");
+  const hField = document.getElementById("nohp");
+  const pField = document.getElementById("pesan");
   
-  if (btnWA && contactForm) {
-    btnWA.addEventListener("click", function (e) {
-      e.preventDefault();
-      
-      const nama = document.getElementById("nama").value.trim();
-      const nohp = document.getElementById("nohp").value.trim();
-      const pesan = document.getElementById("pesan").value.trim();
-      
-      if (!nama || !nohp || !pesan) {
-        alert("Mohon lengkapi semua field terlebih dahulu.");
-        return;
-      }
-      
-      // Default template from user requirements
-      const waMessage = `Halo Admin REMBOELAN, saya ingin bertanya mengenai layanan ambulance.\n\nNama: ${nama}\nNo. HP: ${nohp}\nPesan: ${pesan}`;
-      const waUrl = `https://wa.me/6285141705409?text=${encodeURIComponent(waMessage)}`;
-      
-      window.open(waUrl, '_blank');
-    });
+  // Update WA link dynamically as user types (no mandatory click validation)
+  function updateWALink() {
+    if (!btnWA) return;
+    const nama = nField ? nField.value.trim() : '';
+    const nohp = hField ? hField.value.trim() : '';
+    const pesan = pField ? pField.value.trim() : '';
+    
+    let msg = 'Halo Admin REMBOELAN, saya ingin bertanya mengenai layanan ambulance.';
+    if (nama || nohp || pesan) {
+      msg = `Halo Admin REMBOELAN, saya ingin bertanya mengenai layanan ambulance.\n\nNama: ${nama || '-'}\nNo. HP: ${nohp || '-'}\nPesan: ${pesan || '-'}`;
+    }
+    btnWA.href = `https://wa.me/6285196139136?text=${encodeURIComponent(msg)}`;
   }
+  
+  if (nField) nField.addEventListener('input', updateWALink);
+  if (hField) hField.addEventListener('input', updateWALink);
+  if (pField) pField.addEventListener('input', updateWALink);
 });
