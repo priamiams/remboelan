@@ -49,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
       easing: "ease-in-out",
       once: true,
       mirror: false,
+      disable: window.innerWidth < 768, // Smooth mobile performance without layout displacement
     });
   }
 
