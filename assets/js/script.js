@@ -1,19 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // 1. Preloader
+  // 1. Preloader - Dismiss smoothly without blocking FCP/LCP
   const preloader = document.getElementById("preloader");
   if (preloader) {
-    window.addEventListener("load", function () {
-      setTimeout(function () {
-        preloader.style.opacity = "0";
-        preloader.style.transition = "opacity 0.5s ease";
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 500);
-      }, 500);
-    });
+    const hidePreloader = function () {
+      preloader.style.pointerEvents = "none";
+      preloader.style.opacity = "0";
+      preloader.style.transition = "opacity 0.3s ease";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 300);
+    };
+
+    if (document.readyState === "complete") {
+      hidePreloader();
+    } else {
+      window.addEventListener("load", hidePreloader);
+      // Fallback timeout so preloader never blocks slow connections/Lighthouse
+      setTimeout(hidePreloader, 400);
+    }
   }
 
-  // 2. Sticky Navbar & Back to Top
+  // 2. Sticky Navbar & Back to Top (with passive listener for smooth scrolling)
   const navbar = document.querySelector(".navbar");
   const backToTop = document.getElementById("back-to-top");
 
@@ -25,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (navbar) navbar.classList.remove("sticky-active");
       if (backToTop) backToTop.classList.remove("active");
     }
-  });
+  }, { passive: true });
 
   // Back to top functionality
   if (backToTop) {
