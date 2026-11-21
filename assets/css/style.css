@@ -137,112 +137,267 @@ a {
 
 /* Navbar */
 .navbar {
-  padding: 20px 0;
-  transition: var(--transition);
-  background: transparent;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1030;
+  padding: 16px 0;
+  background: transparent;
+  transition: background-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              padding 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-bottom: 1px solid transparent;
+}
+
+/* Navbar Scrolled (Sticky) or Solid */
+.navbar.sticky-active,
+.navbar.navbar-solid {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 10px 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Brand */
+.navbar-brand {
+  padding: 0;
+  margin-right: 0;
+}
+
+.brand-logo {
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.05);
 }
 
 .brand-title {
   color: var(--white);
-  letter-spacing: 1.5px; 
-  line-height: 1.2;
-  transition: var(--transition);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  line-height: 1.15;
+  transition: color 0.3s ease;
 }
 
 .brand-subtitle {
-  color: rgba(255, 255, 255, 0.8);
-  letter-spacing: 2px; 
-  font-weight: 400; 
-  font-size: 0.65rem;
-  transition: var(--transition);
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1;
+  margin-top: 2px;
+  transition: color 0.3s ease;
 }
 
-.navbar .navbar-toggler i {
-  color: var(--white);
-  transition: var(--transition);
-}
-
-.nav-link {
-  color: var(--white) !important;
-  font-weight: 500;
-  margin: 0 10px;
-  position: relative;
-}
-
-/* Navbar Scrolled (Sticky) or Explicit White Bg */
-.navbar.sticky-active, .navbar.bg-white {
-  position: fixed;
-  background: var(--white);
-  padding: 15px 0;
-  box-shadow: var(--shadow-sm);
-  animation: slideDown 0.5s ease-in-out;
-}
-
-.navbar.sticky-active .brand-title, .navbar.bg-white .brand-title {
+.navbar.sticky-active .brand-title,
+.navbar.navbar-solid .brand-title {
   color: var(--primary-color);
 }
 
-.navbar.sticky-active .brand-subtitle, .navbar.bg-white .brand-subtitle {
+.navbar.sticky-active .brand-subtitle,
+.navbar.navbar-solid .brand-subtitle {
   color: var(--secondary-color);
 }
 
-.navbar.sticky-active .navbar-toggler i, .navbar.bg-white .navbar-toggler i {
-  color: var(--primary-color) !important;
+/* Nav Links Desktop */
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 16px !important;
+  margin: 0 3px;
+  border-radius: 8px;
+  position: relative;
+  transition: all 0.25s ease;
 }
 
-.navbar.sticky-active .nav-link, .navbar.bg-white .nav-link {
+.nav-link:hover {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-link.active {
+  color: var(--white) !important;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.navbar.sticky-active .nav-link,
+.navbar.navbar-solid .nav-link {
   color: var(--secondary-color) !important;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background: var(--primary-color);
-  bottom: 0;
-  left: 0;
-  transition: var(--transition);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
+.navbar.sticky-active .nav-link:hover,
+.navbar.navbar-solid .nav-link:hover {
+  color: var(--primary-color) !important;
+  background: rgba(122, 18, 18, 0.05);
 }
 
 .navbar.sticky-active .nav-link.active,
-.navbar.bg-white .nav-link.active {
+.navbar.navbar-solid .nav-link.active {
   color: var(--primary-color) !important;
+  font-weight: 600;
+  background: rgba(122, 18, 18, 0.08);
 }
 
-@keyframes slideDown {
-  from { transform: translateY(-100%); }
-  to { transform: translateY(0); }
+/* Navbar CTA Button */
+.btn-nav-cta {
+  padding: 9px 22px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 50px;
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(122, 18, 18, 0.2);
+  transition: var(--transition);
 }
 
+.btn-nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(122, 18, 18, 0.32);
+}
+
+/* Toggler Button */
+.navbar-toggler {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: none !important;
+  transition: all 0.25s ease;
+}
+
+.navbar-toggler:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.navbar-toggler .toggler-icon {
+  font-size: 1.6rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.navbar.sticky-active .navbar-toggler,
+.navbar.navbar-solid .navbar-toggler {
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  background: var(--bg-light) !important;
+}
+
+.navbar.sticky-active .navbar-toggler:hover,
+.navbar.navbar-solid .navbar-toggler:hover {
+  background: rgba(122, 18, 18, 0.06) !important;
+}
+
+.navbar.sticky-active .navbar-toggler .toggler-icon,
+.navbar.navbar-solid .navbar-toggler .toggler-icon {
+  color: var(--primary-color);
+}
+
+/* Mobile & Tablet Styles (< 992px) */
 @media (max-width: 991.98px) {
   .navbar {
-    padding: 15px 0;
+    padding: 12px 0;
   }
-  .navbar-collapse {
-    background: var(--white);
-    padding: 15px 20px;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-md);
-    margin-top: 15px;
-  }
-  .nav-link {
-    color: var(--secondary-color) !important;
+
+  .navbar.sticky-active,
+  .navbar.navbar-solid {
     padding: 10px 0;
   }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-title {
+    font-size: 1.15rem;
+    letter-spacing: 1px;
+  }
+
+  .brand-subtitle {
+    font-size: 0.55rem;
+    letter-spacing: 1.5px;
+  }
+
   .navbar-toggler {
-    border: none;
-    box-shadow: none !important;
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-toggler .toggler-icon {
+    font-size: 1.45rem;
+  }
+
+  /* Frosted Glass Mobile Drawer */
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    margin-top: 10px;
+  }
+
+  .navbar-nav {
+    padding-bottom: 4px;
+  }
+
+  .nav-link {
+    color: var(--secondary-color) !important;
+    padding: 12px 16px !important;
+    border-radius: 10px;
+    margin: 3px 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .nav-link:hover {
+    background: var(--bg-light) !important;
+    color: var(--primary-color) !important;
+  }
+
+  .nav-link.active {
+    background: rgba(122, 18, 18, 0.08) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+  }
+
+  .nav-cta-wrapper {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 12px;
+    margin-top: 8px !important;
+  }
+
+  .nav-cta-wrapper .btn-nav-cta {
+    width: 100%;
+    min-height: 46px;
+    font-size: 0.92rem;
+    padding: 11px 20px;
   }
 }
 
@@ -886,19 +1041,6 @@ a {
   font-size: 0.92rem;
   line-height: 1.6;
   flex-grow: 1;
-}
-
-/* ========================================================
-   RESPONSIVE POLISH (Max-Width: 991.98px)
-   ======================================================== */
-@media (max-width: 991.98px) {
-  .navbar-collapse .btn-primary-custom {
-    display: flex;
-    width: 100%;
-    margin-top: 15px;
-    padding: 11px 20px;
-    font-size: 0.92rem;
-  }
 }
 
 /* ========================================================

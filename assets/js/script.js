@@ -23,22 +23,53 @@ document.addEventListener("DOMContentLoaded", function () {
   // 2. Sticky Navbar & Back to Top (with passive listener for smooth scrolling)
   const navbar = document.querySelector(".navbar");
   const backToTop = document.getElementById("back-to-top");
+  const navToggler = document.querySelector(".navbar-toggler");
+  const togglerIcon = document.querySelector(".toggler-icon i");
+  const navCollapse = document.getElementById("navbarNav");
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 50) {
+  function handleNavScroll() {
+    if (window.scrollY > 30) {
       if (navbar) navbar.classList.add("sticky-active");
       if (backToTop) backToTop.classList.add("active");
     } else {
       if (navbar) navbar.classList.remove("sticky-active");
       if (backToTop) backToTop.classList.remove("active");
     }
-  }, { passive: true });
+  }
+
+  window.addEventListener("scroll", handleNavScroll, { passive: true });
+  handleNavScroll();
 
   // Back to top functionality
   if (backToTop) {
     backToTop.addEventListener("click", function (e) {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
+  // Mobile menu icon toggle (hamburger <-> close X) & auto-close on link click
+  if (navToggler && togglerIcon && navCollapse) {
+    navCollapse.addEventListener('show.bs.collapse', function () {
+      togglerIcon.classList.remove('bi-list');
+      togglerIcon.classList.add('bi-x-lg');
+      if (navbar) navbar.classList.add('menu-open');
+    });
+
+    navCollapse.addEventListener('hide.bs.collapse', function () {
+      togglerIcon.classList.remove('bi-x-lg');
+      togglerIcon.classList.add('bi-list');
+      if (navbar) navbar.classList.remove('menu-open');
+    });
+
+    const mobileNavLinks = navCollapse.querySelectorAll('.nav-link');
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        if (window.innerWidth < 992 && typeof bootstrap !== 'undefined') {
+          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          if (bsCollapse) bsCollapse.hide();
+        }
+      });
     });
   }
 

@@ -42,36 +42,42 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top sticky-active bg-white shadow-sm" style="padding: 15px 0;">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-solid" id="mainNavbar">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.html">
-                <img src="assets/img/logo.jpg" alt="Logo REMBOELAN Emergency Service - Sewa Ambulance Jakarta" class="rounded-circle me-2" style="width: 50px; height: 50px; object-fit: cover;" width="50" height="50" loading="eager" decoding="async">
+                <img src="assets/img/logo.jpg" alt="Logo REMBOELAN Emergency Service - Sewa Ambulance Jakarta"
+                    class="rounded-circle me-2 brand-logo" width="46" height="46" loading="eager" decoding="async">
                 <div class="ms-1 d-flex flex-column justify-content-center">
-                    <span class="fw-bolder fs-4 brand-title">REMBOELAN</span>
+                    <span class="brand-title">REMBOELAN</span>
                     <span class="brand-subtitle">EMERGENCY SERVICE</span>
                 </div>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list fs-1"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="toggler-icon"><i class="bi bi-list"></i></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="index.html">Beranda</a>
+                        <a class="nav-link" href="index.html">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="tentang.html">Tentang Kami</a>
+                        <a class="nav-link" href="tentang.html">Tentang Kami</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-primary-custom active" href="layanan.html">Layanan</a>
+                        <a class="nav-link active" aria-current="page" href="layanan.html">Layanan</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="kontak.html">Kontak</a>
+                        <a class="nav-link" href="kontak.html">Kontak</a>
                     </li>
                 </ul>
-                <a href="https://wa.me/6285196139136" target="_blank" rel="noopener noreferrer" class="btn btn-primary-custom ms-lg-3 mt-3 mt-lg-0">
-                    <i class="bi bi-whatsapp me-2"></i> Hubungi Kami
-                </a>
+                <div class="nav-cta-wrapper ms-lg-3 mt-3 mt-lg-0">
+                    <a href="https://wa.me/6285196139136" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary-custom btn-nav-cta">
+                        <i class="bi bi-whatsapp me-2"></i> <span>Hubungi Kami</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
